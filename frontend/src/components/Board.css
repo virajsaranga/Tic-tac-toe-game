@@ -1,0 +1,22 @@
+.board-container {
+  text-align: center;
+  padding: 40px;
+  background: radial-gradient(circle at top left, #121212, #1f1f1f);
+  min-height: 100vh;
+  color: white;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00e5ff;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto;
+}
