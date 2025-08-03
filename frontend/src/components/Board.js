@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Button, Typography } from '@mui/material';
 import Cell from './Cell';
-import './Board.css'; // 👈 Add this CSS file for advanced styles
+import './Board.css';
 
 const Board = () => {
   const [cells, setCells] = useState(Array(9).fill(null));
@@ -22,42 +21,33 @@ const Board = () => {
   };
 
   return (
-    <Box className="board-container">
-      <Typography variant="h4" className="title">
+    <div className="board-container">
+      <h1 className="title">
         {winner ? `${winner} Wins!` : `Next: ${xIsNext ? 'X' : 'O'}`}
-      </Typography>
+      </h1>
 
-      <Box className="board-grid">
+      <div className="board-grid">
         {cells.map((value, index) => (
           <Cell key={index} value={value} onClick={() => handleClick(index)} />
         ))}
-      </Box>
+      </div>
 
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={handleReset}
-        sx={{ mt: 3, fontWeight: 'bold' }}
-      >
+      <button className="reset-button" onClick={handleReset}>
         Restart Game
-      </Button>
-    </Box>
+      </button>
+    </div>
   );
 };
 
+// Winner calculation function [same as before]
 const calculateWinner = (squares) => {
   const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
   ];
-  for (let [a, b, c] of lines) {
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+  for (let [a,b,c] of lines) {
+    if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
   }
