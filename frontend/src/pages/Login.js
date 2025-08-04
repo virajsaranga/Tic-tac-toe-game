@@ -35,7 +35,7 @@ const Login = () => {
       const { token, user } = res.data;
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
-      navigate("/game"); 
+      navigate("/game");
     } catch (err) {
       const backendError =
         err.response?.data?.error || "Login failed. Check your credentials.";
@@ -75,13 +75,18 @@ const Login = () => {
           mb={3}
           sx={{ color: "primary.main" }}
         >
-          <Avatar sx={{ bgcolor: "primary.main", width: 56, height: 56, mb: 1 }}>
+          <Avatar
+            sx={{ bgcolor: "primary.main", width: 56, height: 56, mb: 1 }}
+          >
             <LockOutlinedIcon fontSize="large" />
           </Avatar>
           <Typography
             component="h1"
             variant="h5"
-            sx={{ fontSize: { xs: "1.4rem", sm: "1.75rem" }, fontWeight: "bold" }}
+            sx={{
+              fontSize: { xs: "1.4rem", sm: "1.75rem" },
+              fontWeight: "bold",
+            }}
           >
             Sign in to your account
           </Typography>
@@ -147,7 +152,11 @@ const Login = () => {
             }}
             disabled={isLoading}
           >
-            {isLoading ? <CircularProgress size={24} color="inherit" /> : "Sign In"}
+            {isLoading ? (
+              <CircularProgress size={24} color="inherit" />
+            ) : (
+              "Sign In"
+            )}
           </Button>
         </Box>
 

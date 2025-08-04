@@ -81,11 +81,7 @@ const Register = () => {
           boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
         }}
       >
-        <Box
-          mb={3}
-          textAlign="center"
-          sx={{ color: "primary.main" }}
-        >
+        <Box mb={3} textAlign="center" sx={{ color: "primary.main" }}>
           <Typography
             variant="h4"
             fontWeight="bold"

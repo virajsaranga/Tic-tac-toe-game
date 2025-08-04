@@ -1,14 +1,12 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import './Cell.css'; // 👈 CSS for individual cell
+import './Cell.css';
 
 const Cell = ({ value, onClick }) => {
   return (
-    <Box className={`cell ${value ? 'filled' : ''}`} onClick={onClick}>
+    <button data-testid="cell" className="cell" onClick={onClick}>
       {value}
-    </Box>
+    </button>
   );
 };
 
 export default Cell;
-
