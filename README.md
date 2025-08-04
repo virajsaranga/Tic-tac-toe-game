@@ -87,6 +87,11 @@ npm start
 Frontend runs at: http://localhost:3000
 
 
+
+#in root directory 
+npm i
+npm start 
+
 🚀 API Endpoints
 
 | Method | Endpoint              | Description         |
